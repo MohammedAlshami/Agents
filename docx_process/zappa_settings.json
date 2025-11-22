@@ -1,0 +1,64 @@
+{
+  "main": {
+    "app_function": "app.app",
+    "aws_region": "ap-southeast-1",
+    "project_name": "presly-docx-process",
+    "runtime": "python3.11",
+    "s3_bucket": "crm-production-db",
+    "timeout_seconds": 900,
+    "memory_size": 2000,
+    "ephemeral_storage": { "Size": 4096 },
+    "keep_warm": false,
+    "slim_handler": true,
+    "use_precompiled_packages": true,
+    "exclude": [
+      "*.pyc",
+      "*.pyo",
+      "__pycache__",
+      "*.egg-info",
+      ".git",
+      ".gitignore",
+      "test_*",
+      "*.md"
+    ],
+    "environment_variables": {
+      "ENV": "production",
+      "DEBUG": "True"
+    },
+    "log_level": "DEBUG",
+    "no_verify": true,
+    "cors": {
+      "allowed_origins": [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3002",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3002",
+        "https://www.presly.xyz",
+        "https://presly.xyz",
+        "*"
+      ],
+      "allowed_headers": [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "X-User-ID",
+        "Accept"
+      ],
+      "allowed_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "expose_headers": [
+        "Content-Type",
+        "X-Requested-With"
+      ],
+      "max_age": 86400
+    }
+  }
+}
+
+

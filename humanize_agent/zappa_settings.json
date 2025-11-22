@@ -1,0 +1,46 @@
+{
+  "main": {
+    "app_function": "app.app",
+    "aws_region": "ap-southeast-1",
+    "project_name": "presly-humanize-agent",
+    "runtime": "python3.11",
+    "s3_bucket": "crm-production-db",
+    "timeout_seconds": 900,
+    "memory_size": 2000,
+    "ephemeral_storage": { "Size": 4096 },
+    "keep_warm": false,
+    "slim_handler": true,
+    "environment_variables": {
+      "ENV": "production",
+      "DEBUG": "True"
+    },
+    "log_level": "DEBUG",
+    "no_verify": true,
+    "cors": {
+      "allowed_origins": [
+        "http://localhost:3001",
+        "*",
+        "https://crm-ruby-rho.vercel.app"
+      ],
+      "allowed_headers": [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With"
+      ],
+      "allowed_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "expose_headers": [
+        "Content-Type",
+        "X-Requested-With"
+      ],
+      "max_age": 86400
+    }
+  }
+}
+
+

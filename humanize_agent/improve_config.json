@@ -1,0 +1,22 @@
+{
+  "humanize_api_url": "http://localhost:5004/api/v1/humanize/",
+  "openai_api_key": null,
+  "topics": [
+    "The impact of artificial intelligence on modern business",
+    "Climate change and its effects on global economies",
+    "The future of remote work",
+    "Sustainable energy solutions",
+    "Digital transformation in healthcare",
+    "The role of social media in society",
+    "Renewable energy technologies",
+    "Cybersecurity challenges in 2024",
+    "The evolution of e-commerce",
+    "Machine learning applications in finance"
+  ],
+  "success_threshold": 3,
+  "modification_interval": 5,
+  "ai_detection_threshold": 35.0,
+  "_comment": "modification_interval = iterations per paragraph (improve prompts each iteration)",
+  "output_file": "humanize_improvement_results.json"
+}
+

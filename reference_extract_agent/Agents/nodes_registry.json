@@ -1,0 +1,516 @@
+{
+  "nodes": {
+    "dependency_manager": {
+      "id": "dependency_manager",
+      "name": "Dependency Manager",
+      "description": "Manages variable dependencies across document sections",
+      "type": "ai_agent",
+      "category": "workflow_management",
+      "interface_file": "interface/dependency_manager_node.py",
+      "implementation_path": "nodes/ai/dependency_manager/",
+      "main_class": "DependencyManagerAgent",
+      "status": "active",
+      "capabilities": [
+        "check_dependencies",
+        "register_section",
+        "update_variables",
+        "get_status",
+        "get_next_section",
+        "mark_section_complete",
+        "reset"
+      ],
+      "inputs": [
+        "section_id",
+        "section_name",
+        "required_variables",
+        "variables",
+        "all_sections"
+      ],
+      "outputs": [
+        "can_generate",
+        "missing_variables",
+        "available_variables",
+        "next_action",
+        "next_section",
+        "completion_percentage"
+      ],
+      "dependencies": [],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "document_generation": {
+      "id": "document_generation",
+      "name": "Document Generation Agent",
+      "description": "Generates document sections using AI with templates and variables",
+      "type": "ai_agent",
+      "category": "content_generation",
+      "interface_file": "interface/document_generation_node.py",
+      "implementation_path": "nodes/ai/document_generation/",
+      "main_class": "DocumentGenerationAgent",
+      "status": "active",
+      "capabilities": [
+        "generate_section",
+        "validate_generation_inputs",
+        "get_generation_capabilities",
+        "estimate_tokens",
+        "get_optimal_parameters"
+      ],
+      "inputs": [
+        "template",
+        "variables",
+        "section_name",
+        "section_description",
+        "context",
+        "previous_sections",
+        "generation_mode",
+        "tone",
+        "max_tokens",
+        "temperature"
+      ],
+      "outputs": [
+        "generated_content",
+        "content_length",
+        "tokens_used",
+        "variables_used",
+        "generation_mode",
+        "model_used"
+      ],
+      "dependencies": ["openai"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "variable_extractor": {
+      "id": "variable_extractor",
+      "name": "Variable Extractor",
+      "description": "Extracts variable values from loaded documents using AI",
+      "type": "ai_agent",
+      "category": "data_extraction",
+      "interface_file": "interface/variable_extractor_node.py",
+      "implementation_path": "nodes/ai/variable_extractor/",
+      "main_class": "VariableExtractorAgent",
+      "status": "active",
+      "capabilities": [
+        "extract_variables",
+        "validate_extraction_inputs",
+        "get_extraction_capabilities",
+        "estimate_extraction_complexity"
+      ],
+      "inputs": [
+        "documents",
+        "variables_to_extract",
+        "variable_descriptions",
+        "extraction_mode",
+        "context",
+        "max_tokens",
+        "temperature"
+      ],
+      "outputs": [
+        "extracted_variables",
+        "extraction_confidence",
+        "variables_found",
+        "variables_not_found",
+        "documents_processed",
+        "tokens_used"
+      ],
+      "dependencies": ["openai"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "markdown_to_file": {
+      "id": "markdown_to_file",
+      "name": "Markdown to File",
+      "description": "Converts generated markdown to .md files",
+      "type": "utility",
+      "category": "file_operations",
+      "interface_file": "interface/markdown_to_file_node.py",
+      "implementation_path": "nodes/utilities/markdown_to_file/",
+      "main_class": "MarkdownToFileUtility",
+      "status": "active",
+      "capabilities": [
+        "save_markdown",
+        "save_multiple_sections",
+        "create_combined_document",
+        "list_files",
+        "get_output_info"
+      ],
+      "inputs": [
+        "content",
+        "filename",
+        "output_dir",
+        "metadata",
+        "sections",
+        "project_name",
+        "include_toc"
+      ],
+      "outputs": [
+        "file_path",
+        "filename",
+        "file_size",
+        "content_length",
+        "saved_files",
+        "successful_saves",
+        "failed_saves"
+      ],
+      "dependencies": [],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "project_details": {
+      "id": "project_details",
+      "name": "Project Details Manager",
+      "description": "Manages project data, session management, and file references",
+      "type": "data_manager",
+      "category": "project_management",
+      "interface_file": "interface/project_details_node.py",
+      "implementation_path": "nodes/db/",
+      "main_class": "MongoDBManager",
+      "status": "active",
+      "capabilities": [
+        "create_project",
+        "get_project",
+        "update_project",
+        "delete_project",
+        "list_projects",
+        "manage_sessions"
+      ],
+      "inputs": [
+        "project_id",
+        "project_data",
+        "session_id",
+        "file_references"
+      ],
+      "outputs": [
+        "project_info",
+        "session_data",
+        "file_list",
+        "project_status"
+      ],
+      "dependencies": ["mongodb"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "document_loader": {
+      "id": "document_loader",
+      "name": "Document Loader",
+      "description": "Loads documents using LangChain document loaders",
+      "type": "data_loader",
+      "category": "file_processing",
+      "interface_file": "interface/document_loader_node.py",
+      "implementation_path": "nodes/utilities/",
+      "main_class": "DocumentLoader",
+      "status": "active",
+      "capabilities": [
+        "load_pdf",
+        "load_word",
+        "load_excel",
+        "load_powerpoint",
+        "load_csv",
+        "load_json",
+        "load_directory",
+        "load_web_content"
+      ],
+      "inputs": [
+        "file_path",
+        "file_type",
+        "directory_path",
+        "url",
+        "loader_config"
+      ],
+      "outputs": [
+        "documents",
+        "metadata",
+        "page_content",
+        "source_info"
+      ],
+      "dependencies": ["langchain"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "chat_agent": {
+      "id": "chat_agent",
+      "name": "Chat Agent",
+      "description": "Handles user conversations and general knowledge questions",
+      "type": "ai_agent",
+      "category": "conversation",
+      "interface_file": "interface/chat_agent_node.py",
+      "implementation_path": "nodes/ai/chat_agent/",
+      "main_class": "ChatAgent",
+      "status": "active",
+      "capabilities": [
+        "process_message",
+        "get_conversation_history",
+        "search_knowledge_base",
+        "generate_response"
+      ],
+      "inputs": [
+        "message",
+        "conversation_id",
+        "context",
+        "user_id"
+      ],
+      "outputs": [
+        "response",
+        "conversation_id",
+        "confidence_score",
+        "sources"
+      ],
+      "dependencies": ["openai", "pinecone"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "search_agent": {
+      "id": "search_agent",
+      "name": "Search Agent",
+      "description": "Performs web search and current information queries",
+      "type": "ai_agent",
+      "category": "information_retrieval",
+      "interface_file": "interface/search_agent_node.py",
+      "implementation_path": "nodes/ai/search_agent/",
+      "main_class": "SearchAgent",
+      "status": "active",
+      "capabilities": [
+        "web_search",
+        "news_search",
+        "academic_search",
+        "filter_results",
+        "rank_results"
+      ],
+      "inputs": [
+        "query",
+        "search_type",
+        "filters",
+        "max_results"
+      ],
+      "outputs": [
+        "search_results",
+        "sources",
+        "relevance_scores",
+        "result_count"
+      ],
+      "dependencies": ["perplexity"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "template_parser": {
+      "id": "template_parser",
+      "name": "Template Parser",
+      "description": "Parses HTML templates and variable lists from markdown",
+      "type": "utility",
+      "category": "template_processing",
+      "interface_file": "interface/template_parser_node.py",
+      "implementation_path": "nodes/utilities/",
+      "main_class": "TemplateParser",
+      "status": "active",
+      "capabilities": [
+        "parse_template",
+        "extract_variables",
+        "validate_template",
+        "match_variables"
+      ],
+      "inputs": [
+        "template_content",
+        "variable_list",
+        "template_type"
+      ],
+      "outputs": [
+        "parsed_template",
+        "extracted_variables",
+        "validation_results",
+        "template_info"
+      ],
+      "dependencies": [],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "html_to_markdown": {
+      "id": "html_to_markdown",
+      "name": "HTML to Markdown Converter",
+      "description": "Converts HTML content to Markdown format",
+      "type": "utility",
+      "category": "format_conversion",
+      "interface_file": "interface/html_to_markdown_node.py",
+      "implementation_path": "nodes/utilities/",
+      "main_class": "HTMLToMarkdownConverter",
+      "status": "active",
+      "capabilities": [
+        "convert_html",
+        "clean_html",
+        "preserve_formatting",
+        "handle_links",
+        "handle_images"
+      ],
+      "inputs": [
+        "html_content",
+        "conversion_options",
+        "preserve_structure"
+      ],
+      "outputs": [
+        "markdown_content",
+        "conversion_stats",
+        "preserved_elements"
+      ],
+      "dependencies": ["markdownify"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "humanize_agent": {
+      "id": "humanize_agent",
+      "name": "Humanize Agent",
+      "description": "Makes text sound more human and natural",
+      "type": "ai_agent",
+      "category": "text_processing",
+      "interface_file": "interface/humanize_agent_node.py",
+      "implementation_path": "nodes/ai/humanize_agent/",
+      "main_class": "HumanizeAgent",
+      "status": "active",
+      "capabilities": [
+        "humanize_text",
+        "process_input",
+        "make_natural"
+      ],
+      "inputs": [
+        "text"
+      ],
+      "outputs": [
+        "original_text",
+        "humanized_text",
+        "success",
+        "error",
+        "timestamp",
+        "model",
+        "agent"
+      ],
+      "dependencies": ["openai"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    },
+    "paraphrase_agent": {
+      "id": "paraphrase_agent",
+      "name": "Paraphrase Agent",
+      "description": "Paraphrases text with academic sources and credible references using Perplexity",
+      "type": "ai_agent",
+      "category": "text_processing",
+      "interface_file": "interface/paraphrase_agent_node.py",
+      "implementation_path": "nodes/ai/paraphrase_agent/",
+      "main_class": "ParaphraseAgent",
+      "status": "active",
+      "capabilities": [
+        "paraphrase",
+        "paraphrase_with_context",
+        "stream_paraphrase",
+        "create_custom_paraphrase",
+        "get_paraphrase_capabilities"
+      ],
+      "inputs": [
+        "text",
+        "context",
+        "paraphrase_type",
+        "include_sources"
+      ],
+      "outputs": [
+        "paraphrased_text",
+        "original_text",
+        "sources",
+        "timestamp",
+        "paraphrase_type",
+        "response_length"
+      ],
+      "dependencies": ["perplexity"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  "categories": {
+    "ai_agent": {
+      "name": "AI Agents",
+      "description": "Nodes that use AI models for intelligent processing",
+      "color": "#3B82F6",
+      "icon": "brain"
+    },
+    "utility": {
+      "name": "Utilities",
+      "description": "Utility functions for data processing and file operations",
+      "color": "#10B981",
+      "icon": "tools"
+    },
+    "data_manager": {
+      "name": "Data Managers",
+      "description": "Nodes that manage data storage and retrieval",
+      "color": "#F59E0B",
+      "icon": "database"
+    },
+    "data_loader": {
+      "name": "Data Loaders",
+      "description": "Nodes that load and process various file types",
+      "color": "#8B5CF6",
+      "icon": "upload"
+    },
+    "text_processing": {
+      "name": "Text Processing",
+      "description": "Nodes that process and transform text content",
+      "color": "#EF4444",
+      "icon": "edit"
+    }
+  },
+  "workflows": {
+    "takeover_document_generation": {
+      "name": "Takeover Document Generation",
+      "description": "Complete workflow for generating takeover documents",
+      "nodes": [
+        "project_details",
+        "document_loader",
+        "variable_extractor",
+        "dependency_manager",
+        "search_agent",
+        "chat_agent",
+        "document_generation",
+        "markdown_to_file"
+      ],
+      "flow": [
+        {
+          "from": "project_details",
+          "to": "document_loader",
+          "condition": "if_files_exist"
+        },
+        {
+          "from": "document_loader",
+          "to": "variable_extractor",
+          "condition": "always"
+        },
+        {
+          "from": "variable_extractor",
+          "to": "dependency_manager",
+          "condition": "always"
+        },
+        {
+          "from": "dependency_manager",
+          "to": "search_agent",
+          "condition": "if_dependencies_missing"
+        },
+        {
+          "from": "dependency_manager",
+          "to": "chat_agent",
+          "condition": "if_search_failed"
+        },
+        {
+          "from": "dependency_manager",
+          "to": "document_generation",
+          "condition": "if_dependencies_met"
+        },
+        {
+          "from": "document_generation",
+          "to": "markdown_to_file",
+          "condition": "always"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2024-01-01T00:00:00Z",
+    "total_nodes": 12,
+    "active_nodes": 12,
+    "categories_count": 5,
+    "workflows_count": 1
+  }
+}

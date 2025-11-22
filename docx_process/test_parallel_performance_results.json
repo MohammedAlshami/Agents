@@ -1,0 +1,14 @@
+{
+  "performance": {
+    "extraction_time": 0.11537742614746094,
+    "parallel_time": 7.828224420547485,
+    "total_time": 44.770825147628784,
+    "within_30s_target": false,
+    "within_60s_limit": true
+  },
+  "results": {
+    "sections_count": 6,
+    "mappings_count": 48,
+    "total_segments": 127
+  }
+}

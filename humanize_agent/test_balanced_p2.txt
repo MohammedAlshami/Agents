@@ -1,0 +1,2 @@
+So, when we took a good look at the dataset, it pretty much showed us some strong links between what we'd call independent variables and the outcomes we were tracking. And honestly, the numbers were pretty convincing - way above what you'd normally expect. Makes sense, right?
+

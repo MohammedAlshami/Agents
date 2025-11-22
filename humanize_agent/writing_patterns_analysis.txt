@@ -1,0 +1,67 @@
+ACADEMIC WRITING PATTERNS ANALYSIS
+============================================================
+
+Analyzed 506 abstracts from business journals (2015-2019)
+
+TOP SENTENCE STARTERS:
+  this paper: 53 times
+  in this: 48 times
+  this article: 45 times
+  this study: 42 times
+  based on: 40 times
+  we identify: 35 times
+  we also: 33 times
+  we argue: 31 times
+  drawing on: 30 times
+  our review: 27 times
+  research summary: 27 times
+  we conclude: 25 times
+  managerial summary: 25 times
+  finally, we: 24 times
+  the results: 24 times
+  as a: 23 times
+  we provide: 23 times
+  the purpose: 21 times
+  we review: 21 times
+  the authors: 20 times
+
+TOP TRANSITION WORDS:
+  however: 92 times
+  thus: 55 times
+  furthermore: 31 times
+  therefore: 27 times
+  moreover: 22 times
+  hence: 16 times
+  additionally: 10 times
+  consequently: 5 times
+  nevertheless: 4 times
+  meanwhile: 3 times
+  nonetheless: 2 times
+
+SAMPLE ABSTRACTS FOR REFERENCE:
+----------------------------------------
+
+Sample 1:
+Title: Digital transformation: A multidisciplinary reflection and research agenda
+Source: Journal of Business Research
+Abstract: Digital transformation and resultant business model innovation have fundamentally altered consumers' expectations and behaviors, putting immense pressure on traditional firms, and disrupting numerous markets. Drawing on extant literature, we identify three stages of digital transformation: digitization, digitalization, and digital transformation. We identify and delineate growth strategies for digital firms as well as the assets and capabilities required in order to successfully transform digitally. We posit that digital transformation requires specific organizational structures and bears consequences for the metrics used to calibrate performance. Finally, we provide a research agenda to stimulate and guide future research on digital transformation.
+
+Sample 2:
+Title: Critical analysis of Big Data challenges and analytical methods
+Source: Journal of Business Research
+Abstract: Big Data (BD), with their potential to ascertain valued insights for enhanced decision-making process, have recently attracted substantial interest from both academics and practitioners. Big Data Analytics (BDA) is increasingly becoming a trending practice that many organizations are adopting with the purpose of constructing valuable information from BD. The analytics process, including the deployment and use of BDA tools, is seen by organizations as a tool to improve operational efficiency though it has strategic potential, drive new revenue streams and gain competitive advantages over business rivals. However, there are different types of analytic applications to consider. Therefore, prior to hasty use and buying costly BD tools, there is a need for organizations to first understand the BDA landscape. Given the significant nature of the BD and BDA, this paper presents a state-of-the-art review that presents a holistic view of the BD challenges and BDA methods theorized/proposed/employed by organizations to help others understand this landscape with the objective of making robust investment decisions. In doing so, systematically analysing and synthesizing the extant research published on BD and BDA area. More specifically, the authors seek to answer the following two principal questions: Q1 – What are the different types of BD challenges theorized/proposed/confronted by organizations? and Q2 – What are the different types of BDA methods theorized/proposed/employed to overcome BD challenges?. This systematic literature review (SLR) is carried out through observing and understanding the past trends and extant patterns/themes in the BDA research area, evaluating contributions, summarizing knowledge, thereby identifying limitations, implications and potential further research avenues to support the academic community in exploring research themes/patterns. Thus, to trace the implementation of BD strategies, a profiling method is employed to analyze articles (published in English-speaking peer-reviewed journals between 1996 and 2015) extracted from the Scopus database. The analysis presented in this paper has identified relevant BD research studies that have contributed both conceptually and empirically to the expansion and accrual of intellectual wealth to the BDA in technology and organizational resource management discipline.
+
+Sample 3:
+Title: Re-examining the Unified Theory of Acceptance and Use of Technology (UTAUT): Towards a Revised Theoretical Model
+Source: Information Systems Frontiers
+Abstract: Based on a critical review of the Unified Theory of Acceptance and Use of Technology (UTAUT), this study first formalized an alternative theoretical model for explaining the acceptance and use of information system (IS) and information technology (IT) innovations. The revised theoretical model was then empirically examined using a combination of meta-analysis and structural equation modelling (MASEM) techniques. The meta-analysis was based on 1600 observations on 21 relationships coded from 162 prior studies on IS/IT acceptance and use. The SEM analysis showed that attitude: was central to behavioural intentions and usage behaviours, partially mediated the effects of exogenous constructs on behavioural intentions, and had a direct influence on usage behaviours. A number of implications for theory and practice are derived based on the findings.
+
+Sample 4:
+Title: How entrepreneurial SMEs compete through digital platforms: The roles of digital platform capability, network capability and ambidexterity
+Source: Journal of Business Research
+Abstract: Digitalization offers unprecedented opportunities for entrepreneurial small and medium-sized enterprises (SMEs). However, many entrepreneurial SMEs lack resources and capabilities or suffer from inertia, which hampers these opportunities. This study investigates how entrepreneurial SMEs can enhance performance through digital platforms. Specifically, the study examines the effect of digital platform capability and network capability on entrepreneurial SMEs' financial performance. The study also examines how exploitation and exploration orientations moderate this relationship. Based on analysis of 230 entrepreneurial SMEs, the results indicate that digital platform capability has a positive indirect effect on entrepreneurial SMEs' performance via network capability. The study also shows that exploitation and exploration orientations negatively and positively moderate this effect, respectively. The results suggest that entrepreneurial SMEs can enhance their performance through digital platform capability by aligning this capability with their orientation. These findings thereby enrich the literature on entrepreneurial SMEs and capabilities.
+
+Sample 5:
+Title: The Role of Leadership in a Digitalized World: A Review
+Source: Frontiers in Psychology
+Abstract: Digital technology has changed organizations in an irreversible way. Like the movable type printing accelerated the evolution of our history, digitalization is shaping organizations, work environment and processes, creating new challenges leaders have to face. Social science scholars have been trying to understand this multifaceted phenomenon, however, findings have accumulated in a fragmented and dispersed fashion across different disciplines, and do not seem to converge within a clear picture. To overcome this shortcoming in the literature and foster clarity and alignment in the academic debate, this paper provides a comprehensive analysis of the contribution of studies on leadership and digitalization, identifying patterns of thought and findings across various social science disciplines, such as management and psychology. It clarifies key definitions and ideas, highlighting the main theories and findings drawn by scholars. Further, it identifies categories that group papers according to the macro level of analysis (e-leadership and organization, digital tools, ethical issues, and social movements), and micro level of analysis (the role of C-level managers, leader’s skills in the digital age, practices for leading virtual teams). Main findings show leaders are key actors in the development of a digital culture: they need to create relationships with multiple and scattered stakeholders, and focus on enabling collaborative processes in complex settings, while attending to pressing ethical concerns. With this research, we contribute to advance theoretically the debate about digital transformation and leadership, offering an extensive and systematic review, and identifying key future research opportunities to advance knowledge in this field.
